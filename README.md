@@ -5,6 +5,7 @@ Javascript style guide inspired in [Airbnb](https://github.com/airbnb/javascript
 
   1. [Editorconfig](#editorconfig)
   1. [Babel](#babel)
+  1. [ESlint](#eslint)
   1. [JSBeautify](#jsbeautify)
   1. [Possible errors](#possible-errors)
 
@@ -13,23 +14,17 @@ Javascript style guide inspired in [Airbnb](https://github.com/airbnb/javascript
 
 EditorConfig helps developers define and maintain consistent coding styles between different editors and IDEs.
 
-<a name="editorconfig--indent-style"></a><a name="2.1"></a>
-- [1.1](#editorconfig--indent-style) Tabs must be used to indent instead of spaces.
+- Tabs must be used to indent instead of spaces.
 
-<a name="editorconfig--indent-size"></a><a name="2.1"></a>
-- [1.2](#editorconfig--indent-size) Use 1 tab to indent the code.
+- Use 1 tab to indent the code.
 
-<a name="editorconfig--end-of-line"></a><a name="2.1"></a>
-- [1.3](#editorconfig--end-of-line) Use "lf" char at end of line.
+- Use "lf" char at end of line.
 
-<a name="editorconfig--charset"></a><a name="2.1"></a>
-- [1.4](#editorconfig--charset) UTF-8 charset.
+- UTF-8 charset.
 
-<a name="editorconfig--trailing-whitespace"></a><a name="2.1"></a>
-- [1.5](#editorconfig--trailing-whitespace) Remove white spaces at the end of the line.
+- Remove white spaces at the end of the line.
 
-<a name="editorconfig--final-line"></a><a name="2.1"></a>
-- [1.7](#editorconfig--final-line) Last line must be blank.
+- Last line must be blank.
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -37,7 +32,33 @@ EditorConfig helps developers define and maintain consistent coding styles betwe
 
 Babel allows you to use ES6 features in your projects and then compiles ES5 for you to use in production.
 
-We currently use [babel-eslint](https://github.com/babel/babel-eslint) to lint all es6 code.
+All code must be writed using babel ES6 rules. Get more ES6 info [here](https://babeljs.io/docs/learn-es2015/).
+
+- Arrows and Lexical This
+
+- Classes
+
+- Template Strings
+
+- Default + Rest + Spread
+
+- Let + Const
+
+- Iterators + For..Of
+
+- Generators
+
+- Modules
+
+- [And much more!](https://babeljs.io/docs/learn-es2015/
+
+**[⬆ back to top](#table-of-contents)**
+
+## ESlint
+
+[ESLint](http://eslint.org/) is an open source project, It's goal is to provide a pluggable linting utility for JavaScript.
+
+This rules are optimized for [ECMAScript 2015](http://www.ecma-international.org/ecma-262/6.0/) && eslint versions >2.4.
 
 **[⬆ back to top](#table-of-contents)**
 
