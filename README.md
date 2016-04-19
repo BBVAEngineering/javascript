@@ -50,7 +50,7 @@ All code must be writed using babel ES6 rules. Get more ES6 info [here](https://
 
 - Modules
 
-- [And much more!](https://babeljs.io/docs/learn-es2015/
+- And much [more...](https://babeljs.io/docs/learn-es2015/)
 
 **[⬆ back to top](#table-of-contents)**
 
