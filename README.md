@@ -58,7 +58,12 @@ All code must be writed using babel ES6 rules. Get more ES6 info [here](https://
 
 [ESLint](http://eslint.org/) is an open source project, It's goal is to provide a pluggable linting utility for JavaScript.
 
-This rules are optimized for [ECMAScript 2015](http://www.ecma-international.org/ecma-262/6.0/) && eslint versions >2.4.
+This rules are optimized for [ECMAScript 2015](http://www.ecma-international.org/ecma-262/6.0/) && eslint versions ^2.8.0.
+
+### Usage
+
+  - `npm install --save-dev eslint-config-bbva eslint`
+  - add `"extends": "bbva"` to your .eslintrc
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -70,8 +75,15 @@ This little [beautifier](https://github.com/beautify-web/js-beautify) will refor
 
 ## Possible errors
 
-  <a name="possible-errors--prefer-const"></a><a name="2.1"></a>
-  - [2.1](#possible-errors--prefer-const) Trailing commas are not valid. eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle)
+  1. Do not use console statements. When using Ember it's recommended to log with the Object [Ember.Logger](http://emberjs.com/api/classes/Ember.Logger.html)
+
+  > Why? messages are considered to be for debugging purposes and therefore not suitable to ship to the client.
+
+  ```javascript
+  Ember.Logger.log('Hey!');
+  ```
+
+  1. Trailing commas are not valid. eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle)
 
     > Why? In some browsers trailing commas can throw an error.
 
@@ -88,11 +100,5 @@ This little [beautifier](https://github.com/beautify-web/js-beautify) will refor
     };
     var wow = [1,2];
     ```
-
-  <a name="possible-errors--no-cond-assign"></a><a name="2.2"></a>
-  - [2.2](#possible-errors--no-cond-assign) Disallow assignment in conditional statements. eslint: [`no-cond-assign`](http://eslint.org/docs/rules/no-cond-assign)
-
-    > Why? In conditional statements, it is very easy to mistype a comparison
-    operator (such as ==) as an assignment operator (such as =).
 
 **[⬆ back to top](#table-of-contents)**

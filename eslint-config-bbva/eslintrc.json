@@ -3,9 +3,12 @@
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": false,
+      "modules": true
     }
   },
+  "plugins": [
+    "import"
+  ],
   "env": {
     "es6": true,
     "browser": true,

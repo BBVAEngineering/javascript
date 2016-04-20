@@ -1,0 +1,38 @@
+{
+  "name": "eslint-config-bbva",
+  "version": "0.0.1",
+  "description": "BBVA's ESLint config",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BBVAEngineering/javascript"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "bbva",
+    "javascript"
+  ],
+  "author": "BBVAEngineering",
+  "maintainers": [
+    {
+      "name": "josex2r",
+      "email": "codex2r@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BBVAEngineering/javascript/issues"
+  },
+  "homepage": "https://github.com/BBVAEngineering/javascript",
+  "devDependencies": {
+    "eslint": "^2.8.0"
+  },
+  "peerDependencies": {
+    "eslint": "^2.8.0"
+  }
+}
