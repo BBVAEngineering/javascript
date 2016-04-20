@@ -1,4 +1,4 @@
-var rules = require('./eslintrc.json');
+var rules = require('./rules/basic.json');
 
 
 module.exports = rules;
