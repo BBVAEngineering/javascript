@@ -1,0 +1,23 @@
+{
+  "rules": {
+    "arrow-body-style": [1, "as-needed"],
+    "arrow-parens": [2, "always"],
+    "arrow-spacing": 1,
+    "constructor-super": 2,
+    "generator-star-spacing": [1, {"before": true, "after": true}],
+    "no-class-assign": 2,
+    "no-const-assign": 2,
+    "no-dupe-class-members": 2,
+    "no-this-before-super": 2,
+    "no-var": 2,
+    "object-shorthand": [1, "always"],
+    "prefer-arrow-callback": 1,
+    "prefer-const": 1,
+    "prefer-reflect": 0,
+    "prefer-spread": 1,
+    "prefer-template": 1,
+    "require-yield": 1,
+    "keyword-spacing": 1,
+    "no-confusing-arrow": 2
+  }
+}

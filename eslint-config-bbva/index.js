@@ -1,4 +1,15 @@
-var rules = require('./rules/basic.json');
+module.exports = {
+	extends: [
+		'./rules/basic.json',
+		'./rules/error.json',
+		'./rules/best-practices.json',
+		'./rules/variables.json',
+		'./rules/node.json',
+		'./rules/issues.json',
+		'./rules/es6.json',
+	].map(require.resolve),
 
-
-module.exports = rules;
+	rules: {
+		// O_O
+	}
+};
