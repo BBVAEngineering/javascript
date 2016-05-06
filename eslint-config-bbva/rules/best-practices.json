@@ -2,7 +2,7 @@
   "rules": {
     "accessor-pairs": 0,
     "block-scoped-var": 2,
-    "complexity": [1, 5],
+    "complexity": [1, 9],
     "consistent-return": 1,
     "curly": [1, "multi-line"],
     "default-case": 2,
