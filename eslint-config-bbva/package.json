@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-bbva",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "BBVA's ESLint config",
   "main": "index.js",
   "scripts": {
