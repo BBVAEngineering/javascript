@@ -15,7 +15,7 @@
     "id-match": [0, "^_?[a-z]+([A-Z][a-z]+)*$"],
     "indent": [1, "tab", { "SwitchCase": 1 }],
     "key-spacing": 0,
-    "lines-around-comment": [1, { "beforeBlockComment": true }],
+    "lines-around-comment": [1, { "beforeBlockComment": true, "allowBlockStart": true, "allowBlockEnd": true }],
     "linebreak-style": 0,
     "max-depth": [1, 3],
     "max-len": [1, 120, 4],
