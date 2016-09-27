@@ -18,7 +18,7 @@
     "lines-around-comment": [1, { "beforeBlockComment": true, "allowBlockStart": true, "allowBlockEnd": true }],
     "linebreak-style": 0,
     "max-depth": [1, 3],
-    "max-len": [1, 120, 4],
+    "max-len": [1, 150, 4],
     "max-nested-callbacks": [1, 3],
     "max-params": [1, 5],
     "max-statements": [1, 20],
