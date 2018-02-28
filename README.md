@@ -1,4 +1,5 @@
 # BBVA Javascript
+
 Javascript style guide inspired in [Airbnb](https://github.com/airbnb/javascript) rules
 
 ## Table of Contents
@@ -8,7 +9,6 @@ Javascript style guide inspired in [Airbnb](https://github.com/airbnb/javascript
   1. [ESlint](#eslint)
   1. [JSBeautify](#jsbeautify)
   1. [Possible errors](#possible-errors)
-
 
 ## Editorconfig
 
@@ -32,7 +32,7 @@ EditorConfig helps developers define and maintain consistent coding styles betwe
 
 Babel allows you to use ES6 features in your projects and then compiles ES5 for you to use in production.
 
-All code must be writed using babel ES6 rules. Get more ES6 info [here](https://babeljs.io/docs/learn-es2015/).
+All code must be written using babel ES6 rules. Get more ES6 info [here](https://babeljs.io/docs/learn-es2015/).
 
 - Arrows and Lexical This
 
@@ -58,12 +58,14 @@ All code must be writed using babel ES6 rules. Get more ES6 info [here](https://
 
 [ESLint](http://eslint.org/) is an open source project, It's goal is to provide a pluggable linting utility for JavaScript.
 
-This rules are optimized for [ECMAScript 2015](http://www.ecma-international.org/ecma-262/6.0/) && eslint versions ^2.8.0.
+This rules are optimized for [ECMAScript 2015](http://www.ecma-international.org/ecma-262/6.0/) and eslint versions ^3.0.0.
+
+You can check the rules for BBVA eslint in this [link](/eslint-config-bbva).
 
 ### Usage
 
-  - `npm install --save-dev eslint-config-bbva eslint`
-  - add `"extends": "bbva"` to your .eslintrc
+- `npm install --save-dev eslint-config-bbva eslint`.
+- add `"extends": "bbva"` to your .eslintrc.js file in your project.
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -102,3 +104,15 @@ This little [beautifier](https://github.com/beautify-web/js-beautify) will refor
     ```
 
 **[⬆ back to top](#table-of-contents)**
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/BBVAEngineering/javascript/tags).
+
+## Authors
+
+See the list of [contributors](https://github.com/BBVAEngineering/javascript/graphs/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
