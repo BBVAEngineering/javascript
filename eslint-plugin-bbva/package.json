@@ -11,6 +11,7 @@
   "author": "BBVAEngineering",
   "main": "lib/index.js",
   "scripts": {
+    "lint": "eslint .",
     "test": "mocha tests --recursive"
   },
   "repository": {
