@@ -1,16 +1,16 @@
 'use strict';
 
 module.exports = {
-    meta: {
-        docs: {
-            description: 'Inline conditional',
-            recommended: false
-        },
-        fixable: null,
-        schema: []
-    },
+	meta: {
+		docs: {
+			description: 'Inline conditional',
+			recommended: false
+		},
+		fixable: null,
+		schema: []
+	},
 
-    create: function(context) {
+	create(context) {
 		return {
 			ExpressionStatement(node) {
 				if (node.expression && node.expression.type === 'LogicalExpression') {

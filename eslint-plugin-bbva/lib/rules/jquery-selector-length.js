@@ -3,16 +3,16 @@
 const $_NAMESPACES = ['$', 'jQuery'];
 
 module.exports = {
-    meta: {
-        docs: {
-            description: 'jQuery selector length',
-            recommended: false
-        },
-        fixable: null,
-        schema: []
-    },
+	meta: {
+		docs: {
+			description: 'jQuery selector length',
+			recommended: false
+		},
+		fixable: null,
+		schema: []
+	},
 
-    create: function(context) {
+	create(context) {
 		return {
 			IfStatement(node) {
 				if (node.test && node.test.type === 'CallExpression') {

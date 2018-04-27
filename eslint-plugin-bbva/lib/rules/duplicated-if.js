@@ -17,16 +17,16 @@ function getTestString(source, node) {
 }
 
 module.exports = {
-    meta: {
-        docs: {
-            description: 'Duplicated if',
-            recommended: false
-        },
-        fixable: null,
-        schema: []
-    },
+	meta: {
+		docs: {
+			description: 'Duplicated if',
+			recommended: false
+		},
+		fixable: null,
+		schema: []
+	},
 
-    create: function(context) {
+	create(context) {
 		return {
 			IfStatement(node) {
 				const source = context.getSourceCode();

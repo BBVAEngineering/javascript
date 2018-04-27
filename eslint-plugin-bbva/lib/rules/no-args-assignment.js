@@ -1,16 +1,16 @@
 'use strict';
 
 module.exports = {
-    meta: {
-        docs: {
-            description: 'No arguments reassignment',
-            recommended: false
-        },
-        fixable: null,
-        schema: []
-    },
+	meta: {
+		docs: {
+			description: 'No arguments reassignment',
+			recommended: false
+		},
+		fixable: null,
+		schema: []
+	},
 
-    create: function(context) {
+	create(context) {
 		return {
 			AssignmentExpression(node) {
 				const left = node.left;
