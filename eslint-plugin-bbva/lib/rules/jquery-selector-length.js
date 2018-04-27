@@ -5,7 +5,7 @@ const $_NAMESPACES = ['$', 'jQuery'];
 module.exports = {
     meta: {
         docs: {
-            description: 'No arguments reassignment',
+            description: 'jQuery selector length',
             recommended: false
         },
         fixable: null,
