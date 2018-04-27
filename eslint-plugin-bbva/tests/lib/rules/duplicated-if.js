@@ -1,6 +1,6 @@
 'use strict';
 
-const rule = require('../../../lib/rules/bbva');
+const rule = require('../../../lib/rules/duplicated-if');
 const RuleTester = require('eslint').RuleTester;
 
 var ruleTester = new RuleTester();
