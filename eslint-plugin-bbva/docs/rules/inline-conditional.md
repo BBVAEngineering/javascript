@@ -1,6 +1,7 @@
 # Inline conditional (inline-conditional)
 
 It fails when a condition is writen in a single line without a return statement.
+Even when it is not, it could confuse future maintainers of the code, and should be avoided.
 
 ## Rule Details
 

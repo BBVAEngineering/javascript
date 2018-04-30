@@ -1,6 +1,7 @@
 # Infinite loop (infinite-loop)
 
-It fails when detects a for loop with a possible infinite cycle.
+It is almost always an error when a for loop's stop condition and incrementer don't act on the same variable.
+Even when it is not, it could confuse future maintainers of the code, and should be avoided.
 
 ## Rule Details
 
