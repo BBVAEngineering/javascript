@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/BBVAEngineering/javascript",
   "dependencies": {
-    "requireindex": "~1.2.0"
+    "requireindex": "~1.1.0"
   },
   "engines": {
     "node": ">=0.10.0"
