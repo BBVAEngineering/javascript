@@ -1,0 +1,36 @@
+{
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "check-coverage": "istanbul check-coverage coverage/coverage-final.json --statements 100 --functions 100 --branches 100 --lines 100",
+    "commit": "git-cz",
+    "lint:js": "eslint --max-warnings 0 ./*.js addon app config tests",
+    "lint:hbs": "ember-template-lint .",
+    "posttest": "npm run report-coverage && npm run check-coverage",
+    "report-coverage": "istanbul report --include=coverage/coverage-final.json text",
+    "semantic-release": "semantic-release",
+    "test": "COVERAGE=true ember test"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@ember/optional-features": "^0.7.0",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/git": "^7.0.8",
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "^2.1.0",
+    "ember-cli-code-coverage": "^1.0.0-beta.8",
+    "ember-cli-template-lint": "^1.0.0-beta.2",
+    "ember-source-channel-url": "^1.1.0",
+    "ember-try": "^0.2.23",
+    "eslint-config-bbva": "file:eslint-config-bbva",
+    "eslint-plugin-ember": "^6.2.0",
+    "eslint-plugin-node": "^8.0.1",
+    "husky": "^1.3.1",
+    "istanbul": "^0.4.5",
+    "semantic-release": "^15.13.3"
+  }
+}
