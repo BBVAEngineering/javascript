@@ -31,19 +31,6 @@
   "dependencies": {
     "requireindex": "~1.2.0"
   },
-  "devDependencies": {
-<<<<<<< HEAD
-    "eslint": "^5.15.1",
-    "mocha": "^6.0.2"
-=======
-    "eslint": "^3.9.1",
-    "istanbul": "^0.4.5",
-    "mocha": "^3.1.2",
-    "nyc": "^13.3.0",
-    "remark-cli": "^6.0.1",
-    "semantic-release": "^15.13.3"
->>>>>>> build(npm): greenkeeper + husky + commitlint
-  },
   "engines": {
     "node": ">=0.10.0"
   },
