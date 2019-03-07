@@ -38,9 +38,6 @@
     "url": "https://github.com/BBVAEngineering/javascript/issues"
   },
   "homepage": "https://github.com/BBVAEngineering/javascript",
-  "devDependencies": {
-    "eslint": "^3.0.0"
-  },
   "peerDependencies": {
     "eslint": "^3.0.0"
   }
