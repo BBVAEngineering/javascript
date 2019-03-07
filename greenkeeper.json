@@ -1,5 +1,14 @@
 {
-    "ignore": [
-        "ember-try"
-    ]
+  "groups": {
+    "config": {
+      "packages": [
+        "eslint-config-bbva/package.json"
+      ]
+    },
+    "plugin": {
+      "packages": [
+        "eslint-plugin-bbva/package.json"
+      ]
+    }
+  }
 }

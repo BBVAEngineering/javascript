@@ -7,7 +7,8 @@ const ruleTester = new RuleTester();
 
 ruleTester.run('duplicated-if', rule, {
 	valid: [
-		'if (a === 1) { foo() } else if (a === 2) { bar() }'
+		'if (a === 1) { foo() } else if (a === 2) { bar() }',
+		'if (a === 1) { foo() }'
 	],
 
 	invalid: [
