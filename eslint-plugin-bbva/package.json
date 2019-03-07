@@ -11,8 +11,14 @@
   "author": "BBVAEngineering",
   "main": "lib/index.js",
   "scripts": {
-    "lint": "eslint .",
-    "test": "mocha tests --recursive"
+    "check-coverage": "istanbul check-coverage coverage/coverage-final.json --statements 100 --functions 100 --branches 100 --lines 100",
+    "lint": "npm run lint:js && npm run lint:md",
+    "lint:js": "eslint --max-warnings 0 ./*.js lib tests",
+    "lint:md": "remark docs",
+    "test": "nyc  --reporter=html --reporter=json --reporter=json-summary --reporter=lcov mocha tests --recursive",
+    "posttest": "npm run report-coverage && npm run check-coverage",
+    "report-coverage": "istanbul report --include=coverage/coverage-final.json text",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -26,8 +32,17 @@
     "requireindex": "~1.2.0"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "eslint": "^5.15.1",
     "mocha": "^6.0.2"
+=======
+    "eslint": "^3.9.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.2",
+    "nyc": "^13.3.0",
+    "remark-cli": "^6.0.1",
+    "semantic-release": "^15.13.3"
+>>>>>>> build(npm): greenkeeper + husky + commitlint
   },
   "engines": {
     "node": ">=0.10.0"

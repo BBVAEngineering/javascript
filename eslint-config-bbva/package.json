@@ -4,7 +4,8 @@
   "description": "BBVA's ESLint config",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint --max-warnings 0 ./*.js rules",
+    "test": "echo 'Passed :)'"
   },
   "repository": {
     "type": "git",

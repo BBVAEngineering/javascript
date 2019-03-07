@@ -7,6 +7,7 @@ const ruleTester = new RuleTester();
 
 ruleTester.run('infinite-loop', rule, {
 	valid: [
+		'for (i = 0; i < 10; i++) {}',
 		'for (var i = 0; i < 10; i++) {}',
 		'for (var i = 0; i <= 10; i += 2) {}'
 	],

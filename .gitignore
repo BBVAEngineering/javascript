@@ -6,19 +6,19 @@
 
 # dependencies
 /bower_components/
-/node_modules/
+node_modules/
 
 # misc
 /.env*
 /.sass-cache
 /connect.lock
-/coverage/
+coverage/
 /libpeerconnection.log
 /npm-debug.log*
 /testem.log
 /yarn-error.log
 /tags*
-/.nyc_output
+.nyc_output
 
 # ember-try
 /.node_modules.ember-try/

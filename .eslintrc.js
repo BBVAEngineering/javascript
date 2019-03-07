@@ -6,15 +6,11 @@ module.exports = {
 		ecmaVersion: 2017,
 		sourceType: 'module'
 	},
-	plugins: [
-		'ember'
-	],
 	extends: [
-		'plugin:ember/recommended',
 		'eslint-config-bbva'
 	],
 	env: {
-		browser: true
+		node: true
 	},
 	overrides: [{
 		files: [

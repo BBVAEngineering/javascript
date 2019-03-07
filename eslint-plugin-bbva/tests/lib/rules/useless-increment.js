@@ -7,6 +7,7 @@ const ruleTester = new RuleTester();
 
 ruleTester.run('useless-increment', rule, {
 	valid: [
+		'j = k++',
 		'j = ++j'
 	],
 

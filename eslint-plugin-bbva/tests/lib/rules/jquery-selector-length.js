@@ -7,6 +7,9 @@ const ruleTester = new RuleTester();
 
 ruleTester.run('jquery-selector-length', rule, {
 	valid: [
+		'if (selector("#foo")) {}',
+		'if (jQuery("#foo").length) {}',
+		'if (jQuery("#foo")) {}',
 		'if ($("#foo").length) {}'
 	],
 
