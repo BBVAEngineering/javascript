@@ -9,7 +9,7 @@
     "commit": "git-cz",
     "lint": "lerna run lint",
     "test": "lerna run test",
-    "version": "npx lerna version --conventional-commits"
+    "version": "npx lerna version -m 'chore(release): publish %s' --conventional-commits"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",
