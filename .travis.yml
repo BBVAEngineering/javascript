@@ -1,22 +1,63 @@
 ---
 language: node_js
-node_js:
-  - "stable"
-
+node_js: stable
 sudo: false
 dist: trusty
 
+addons:
+  chrome: stable
+
+cache:
+  directories:
+    - $HOME/.npm
+
+env:
+  global:
+    - JOBS=1
+
+jobs:
+  fail_fast: true
+
+  include:
+    - stage: "Tests"
+      before_install:
+        - npm config set spin false
+        - npm install -g npm@6
+        - npm install -g codecov
+        - npm install -g greenkeeper-lockfile@1
+        - npm install -g @commitlint/travis-cli
+        - npm --version
+      install:
+        - if [[ $TRAVIS_BRANCH =~ greenkeeper || $TRAVIS_PULL_REQUEST_BRANCH =~ greenkeeper ]]; then npx lerna bootstrap; else npx lerna bootstrap --ci; fi
+      before_script:
+        - greenkeeper-lockfile-update
+      script:
+        - commitlint-travis
+        - npm run lint
+        - npm test
+      after_script:
+        - greenkeeper-lockfile-upload
+      after_success:
+        - npm run codecov
+
+    - stage: "Release"
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx lerna publish
+
 before_install:
   - npm config set spin false
-  - npm install -g npm@^5.7
+  - npm install -g npm@6
   - npm --version
-  - cd eslint-plugin-bbva
-
-install:
-  - npm ci
 
 script:
-  # Usually, it's ok to finish the test scenario without reverting
-  #  to the addon's original dependency state, skipping "cleanup".
-  - npm run lint
   - npm run test
+
+stages:
+  - "Tests"
+  - name: "Release"
+    if: branch = master
+

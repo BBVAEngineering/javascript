@@ -4,7 +4,9 @@
   "description": "BBVA's ESLint config",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ."
+    "codecov": "echo 'No coverage found :)'",
+    "lint": "eslint --max-warnings 0 ./*.js rules",
+    "test": "echo 'Passed :)'"
   },
   "repository": {
     "type": "git",
@@ -37,9 +39,6 @@
     "url": "https://github.com/BBVAEngineering/javascript/issues"
   },
   "homepage": "https://github.com/BBVAEngineering/javascript",
-  "devDependencies": {
-    "eslint": "^3.0.0"
-  },
   "peerDependencies": {
     "eslint": "^3.0.0"
   }

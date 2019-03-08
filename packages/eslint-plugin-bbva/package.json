@@ -1,0 +1,39 @@
+{
+  "name": "eslint-plugin-bbva",
+  "version": "1.0.0",
+  "description": "BBVA eslint plugin",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "rules"
+  ],
+  "author": "BBVAEngineering",
+  "main": "lib/index.js",
+  "scripts": {
+    "check-coverage": "istanbul check-coverage coverage/coverage-final.json --statements 100 --functions 100 --branches 100 --lines 100",
+    "codecov": "codecov --file=coverage/lcov.info",
+    "lint": "npm run lint:js && npm run lint:md",
+    "lint:js": "eslint --max-warnings 0 ./*.js lib tests",
+    "lint:md": "remark docs",
+    "test": "nyc  --reporter=html --reporter=json --reporter=json-summary --reporter=lcov mocha tests --recursive",
+    "posttest": "npm run report-coverage && npm run check-coverage",
+    "report-coverage": "istanbul report --include=coverage/coverage-final.json text",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BBVAEngineering/javascript"
+  },
+  "bugs": {
+    "url": "https://github.com/BBVAEngineering/javascript/issues"
+  },
+  "homepage": "https://github.com/BBVAEngineering/javascript",
+  "dependencies": {
+    "requireindex": "~1.1.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "ISC"
+}

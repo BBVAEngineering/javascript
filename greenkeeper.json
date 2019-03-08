@@ -1,0 +1,14 @@
+{
+  "groups": {
+    "config": {
+      "packages": [
+        "packages/eslint-config-bbva/package.json"
+      ]
+    },
+    "plugin": {
+      "packages": [
+        "packages/eslint-plugin-bbva/package.json"
+      ]
+    }
+  }
+}

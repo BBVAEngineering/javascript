@@ -1,2 +1,11 @@
-node_modules
-tags
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+
+# misc
+coverage/
+npm-debug.log*
+yarn-error.log
+/tags*
+.nyc_output

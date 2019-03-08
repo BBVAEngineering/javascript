@@ -1,0 +1,14 @@
+# misc
+/.bowerrc
+/.editorconfig
+/.ember-cli
+/.env*
+/.eslintignore
+/.eslintrc.js
+/.gitignore
+/.template-lintrc.js
+/.travis.yml
+/.watchmanconfig
+/CONTRIBUTING.md
+/yarn.lock
+.gitkeep
