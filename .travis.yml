@@ -40,14 +40,6 @@ jobs:
       after_success:
         - npm run codecov
 
-    - stage: "Release"
-      script: skip
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script:
-          - npx lerna publish
-
 before_install:
   - npm config set spin false
   - npm install -g npm@6
@@ -58,6 +50,4 @@ script:
 
 stages:
   - "Tests"
-  - name: "Release"
-    if: branch = master
 
