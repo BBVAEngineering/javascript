@@ -5,15 +5,15 @@
     }
   },
   "scripts": {
+    "codecov": "lerna run codecov",
     "commit": "git-cz",
-    "lint": "cd eslint-config-bbva && npm run lint && cd .. && cd eslint-plugin-bbva && npm run lint && cd ..",
-    "postinstall": "cd eslint-config-bbva && npm install && cd .. && cd eslint-plugin-bbva && npm install && cd ..",
-    "semantic-release": "semantic-release",
-    "test": "cd eslint-config-bbva && npm run test && cd .. && cd eslint-plugin-bbva && npm run test && cd .."
+    "lint": "lerna run lint",
+    "test": "lerna run test"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
+    "codecov": "^3.2.0",
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^3.9.1",

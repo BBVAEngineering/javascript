@@ -17,8 +17,6 @@ env:
 
 jobs:
   fail_fast: true
-  allow_failures:
-    - env: EMBER_TRY_SCENARIO=ember-canary
 
   include:
     - stage: "Tests"
@@ -30,7 +28,7 @@ jobs:
         - npm install -g @commitlint/travis-cli
         - npm --version
       install:
-        - if [[ $TRAVIS_BRANCH =~ greenkeeper || $TRAVIS_PULL_REQUEST_BRANCH =~ greenkeeper ]]; then npm install; else npm ci; fi
+        - npx lerna bootstrap
       before_script:
         - greenkeeper-lockfile-update
       script:
@@ -40,15 +38,7 @@ jobs:
       after_script:
         - greenkeeper-lockfile-upload
       after_success:
-        - codecov --file=coverage/lcov.info
-
-    - stage: "Regression Tests"
-      env: EMBER_TRY_SCENARIO=ember-lts-2.18
-    - env: EMBER_TRY_SCENARIO=ember-lts-3.4
-    - env: EMBER_TRY_SCENARIO=ember-release
-    - env: EMBER_TRY_SCENARIO=ember-beta
-    - env: EMBER_TRY_SCENARIO=ember-canary
-    - env: EMBER_TRY_SCENARIO=ember-default-with-jquery
+        - npm run codecov
 
     - stage: "Release"
       script: skip
@@ -56,7 +46,7 @@ jobs:
         provider: script
         skip_cleanup: true
         script:
-          - node_modules/.bin/semantic-release -e semantic-release-monorepo
+          - npx lerna publish
 
 before_install:
   - npm config set spin false
@@ -68,7 +58,6 @@ script:
 
 stages:
   - "Tests"
-  - "Regression Tests"
   - name: "Release"
     if: branch = master
 

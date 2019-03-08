@@ -12,6 +12,7 @@
   "main": "lib/index.js",
   "scripts": {
     "check-coverage": "istanbul check-coverage coverage/coverage-final.json --statements 100 --functions 100 --branches 100 --lines 100",
+    "codecov": "codecov --file=coverage/lcov.info",
     "lint": "npm run lint:js && npm run lint:md",
     "lint:js": "eslint --max-warnings 0 ./*.js lib tests",
     "lint:md": "remark docs",
