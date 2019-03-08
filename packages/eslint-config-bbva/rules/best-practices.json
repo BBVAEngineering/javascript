@@ -46,6 +46,7 @@
     "no-script-url": 2,
     "no-self-compare": 2,
     "no-sequences": 2,
+    "prefer-promise-reject-errors": 2,
     "no-throw-literal": 2,
     "no-unused-expressions": [1, {
       "allowShortCircuit": true,
