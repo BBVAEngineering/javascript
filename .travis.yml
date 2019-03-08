@@ -28,7 +28,7 @@ jobs:
         - npm install -g @commitlint/travis-cli
         - npm --version
       install:
-        - npx lerna bootstrap
+        - if [[ $TRAVIS_BRANCH =~ greenkeeper || $TRAVIS_PULL_REQUEST_BRANCH =~ greenkeeper ]]; then lerna bootstrap; else lerna bootstrap --ci; fi
       before_script:
         - greenkeeper-lockfile-update
       script:
