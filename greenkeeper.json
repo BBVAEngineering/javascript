@@ -2,20 +2,12 @@
   "groups": {
     "config": {
       "packages": [
-<<<<<<< HEAD
         "packages/eslint-config-bbva/package.json"
-=======
-        "eslint-config-bbva/package.json"
->>>>>>> build(npm): greenkeeper + husky + commitlint
       ]
     },
     "plugin": {
       "packages": [
-<<<<<<< HEAD
         "packages/eslint-plugin-bbva/package.json"
-=======
-        "eslint-plugin-bbva/package.json"
->>>>>>> build(npm): greenkeeper + husky + commitlint
       ]
     }
   }
