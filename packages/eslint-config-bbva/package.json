@@ -40,6 +40,6 @@
   },
   "homepage": "https://github.com/BBVAEngineering/javascript",
   "peerDependencies": {
-    "eslint": "^3.0.0"
+    "eslint": "^5.15.2"
   }
 }
