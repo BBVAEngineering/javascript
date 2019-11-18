@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "codecov": "echo 'No coverage found :)'",
-    "lint": "eslint --max-warnings 0 ./*.js rules",
+    "lint": "eslint --max-warnings 0 ./*.js",
     "test": "echo 'Passed :)'"
   },
   "repository": {
@@ -40,6 +40,6 @@
   },
   "homepage": "https://github.com/BBVAEngineering/javascript",
   "peerDependencies": {
-    "eslint": "^6.0.1"
+    "eslint": "^6.6.0"
   }
 }
