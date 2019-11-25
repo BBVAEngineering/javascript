@@ -4,7 +4,7 @@
   "description": "BBVA's ESLint config",
   "main": "index.js",
   "scripts": {
-    "codecov": "echo 'No coverage found :)'",
+    "codecov": "echo 'No coverage found'",
     "lint": "eslint --max-warnings 0 ./*.js",
     "test": "echo 'Passed :)'"
   },
