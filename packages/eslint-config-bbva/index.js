@@ -6,7 +6,8 @@ module.exports = {
 		'./rules/variables.json',
 		'./rules/node.json',
 		'./rules/issues.json',
-		'./rules/es6.json'
+		'./rules/es6.json',
+		'./rules/external.json'
 	].map(require.resolve),
 
 	rules: {
