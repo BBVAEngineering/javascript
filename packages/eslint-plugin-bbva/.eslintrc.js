@@ -16,6 +16,7 @@ module.exports = {
 		'../eslint-config-bbva/rules/variables.json',
 		'../eslint-config-bbva/rules/node.json',
 		'../eslint-config-bbva/rules/issues.json',
-		'../eslint-config-bbva/rules/es6.json'
+		'../eslint-config-bbva/rules/es6.json',
+		'../eslint-config-bbva/rules/external.json'
 	].reduce((acc, json) => Object.assign(acc, require(json).rules), {})
 };
