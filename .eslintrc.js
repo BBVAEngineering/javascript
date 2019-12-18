@@ -7,13 +7,11 @@ module.exports = {
 		sourceType: 'module'
 	},
 	extends: [
-		'eslint-config-bbva',
-		'plugin:security/recommended'
+		'eslint-config-bbva'
 	],
 	plugins: [
 		'node',
 		'optimize-regex',
-		'security',
 		'no-unsanitized'
 	],
 	env: {
