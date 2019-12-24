@@ -5,7 +5,7 @@ module.exports = {
 		type: 'layout',
 		docs: {
 			description: 'return statements must be preceded by a blank line, unless it\'s the only content of the block',
-			recommended: 'false'
+			recommended: false
 		},
 		fixable: 'whitespace',
 		schema: [],
