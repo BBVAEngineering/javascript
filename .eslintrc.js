@@ -10,7 +10,9 @@ module.exports = {
 		'eslint-config-bbva'
 	],
 	plugins: [
-		'node'
+		'node',
+		'optimize-regex',
+		'no-unsanitized'
 	],
 	env: {
 		node: true

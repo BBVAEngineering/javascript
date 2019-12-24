@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "optimize-regex/optimize-regex": 1,
+    "no-unsanitized/method": 2,
+    "no-unsanitized/property": 2
+  }
+}
