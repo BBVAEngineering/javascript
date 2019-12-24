@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/BBVAEngineering/javascript/compare/eslint-config-bbva@3.0.0...eslint-config-bbva@3.1.0) (2019-12-24)
+
+
+### Features
+
+* 🎸 nuevas reglas de seguridad ([96c281d](https://github.com/BBVAEngineering/javascript/commit/96c281dce1870773c3a941221e0730dda2420345))
+
+
+
+
+
 # 3.0.0 (2019-11-25)
 
 
