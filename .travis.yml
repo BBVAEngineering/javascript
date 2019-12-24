@@ -28,7 +28,7 @@ jobs:
         - npm install -g @commitlint/travis-cli
         - npm --version
       install:
-        - if [[ $TRAVIS_BRANCH =~ greenkeeper || $TRAVIS_PULL_REQUEST_BRANCH =~ greenkeeper ]]; then npx lerna bootstrap; else npx lerna bootstrap --ci; fi
+        - if [[ $TRAVIS_BRANCH =~ greenkeeper || $TRAVIS_PULL_REQUEST_BRANCH =~ greenkeeper ]]; then npx lerna bootstrap --no-ci; else npx lerna bootstrap --ci; fi
       before_script:
         - greenkeeper-lockfile-update
       script:
@@ -40,14 +40,18 @@ jobs:
       after_success:
         - npm run codecov
 
-before_install:
-  - npm config set spin false
-  - npm install -g npm@6
-  - npm --version
-
-script:
-  - npm run test
+    - stage: "Release"
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        install:
+          - npx lerna bootstrap --ci
+        script:
+          - npm run release -- --yes
 
 stages:
   - "Tests"
+  - name: "Release"
+    if: branch = master
 
