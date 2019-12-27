@@ -40,50 +40,77 @@ ruleTester.run('prefer-rsvp-promise-reject-errors', rule, {
 
 	invalid: [
 		{
-			code: 'reject()',
+			code: 'import { reject } from \'rsvp\'; reject()',
+			parserOptions: {
+				sourceType: 'module',
+				ecmaVersion: 2018
+			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
 			}]
 		},
 		{
-			code: 'RSVP.reject()',
+			code: 'import RSVP from \'rsvp\'; RSVP.reject()',
+			parserOptions: {
+				sourceType: 'module',
+				ecmaVersion: 2018
+			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
 			}]
 		},
 		{
-			code: 'reject(\'foo\')',
+			code: 'import { reject } from \'rsvp\'; reject(\'foo\')',
+			parserOptions: {
+				sourceType: 'module',
+				ecmaVersion: 2018
+			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
 			}]
 		},
 		{
-			code: 'reject(42)',
+			code: 'import { reject } from \'rsvp\'; reject(42)',
+			parserOptions: {
+				sourceType: 'module',
+				ecmaVersion: 2018
+			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
 			}]
 		},
 		{
-			code: 'reject(true)',
+			code: 'import { reject } from \'rsvp\'; reject(true)',
+			parserOptions: {
+				sourceType: 'module',
+				ecmaVersion: 2018
+			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
 			}]
 		},
 		{
-			code: 'reject({ foo: \'bar\' })',
+			code: 'import { reject } from \'rsvp\'; reject({ foo: \'bar\' })',
+			parserOptions: {
+				sourceType: 'module',
+				ecmaVersion: 2018
+			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
 			}]
 		},
 		{
-			code: 'const foo = \'bar\'; reject(foo)',
-			parserOptions: { ecmaVersion: 2018 },
+			code: 'import { reject } from \'rsvp\'; const foo = \'bar\'; reject(foo)',
+			parserOptions: {
+				sourceType: 'module',
+				ecmaVersion: 2018
+			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
