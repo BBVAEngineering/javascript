@@ -9,7 +9,7 @@ function checkAbortTransition(context, transitionArgument) {
 	if (transitionAbortCall) {
 		context.report({
 			node: transitionAbortCall.identifier.parent.parent,
-			message: 'avoid `transition.abort` on route hooks, use an abort with fallback method instead'
+			message: 'avoid aborting the transition on route hooks, use an abort with fallback method instead'
 		});
 	}
 }
