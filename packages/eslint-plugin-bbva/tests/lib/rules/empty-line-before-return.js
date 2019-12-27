@@ -26,6 +26,14 @@ ruleTester.run('empty-line-before-return', rule, {
 		{
 			code: '() => {\n\tif(a) {\n\t\treturn bar;\n\t}\n\nreturn qux;\n}',
 			parserOptions: { ecmaVersion: 2018 }
+		},
+		{
+			code: '() => {\n\tconst a = true;\n\n\t// comment\n\treturn bar;\n}',
+			parserOptions: { ecmaVersion: 2018 }
+		},
+		{
+			code: '() => {\n\tconst a = true;\n\t// comment\n\n\treturn bar;\n}',
+			parserOptions: { ecmaVersion: 2018 }
 		}
 	],
 
@@ -63,6 +71,15 @@ ruleTester.run('empty-line-before-return', rule, {
 				type: 'ReturnStatement'
 			}],
 			output: '() => {\n\tif(a) {\n\t\treturn bar;\n\t}\n\nreturn qux;\n}'
+		},
+		{
+			code: '() => {\n\tconst a = true;\n\t// comment\n\treturn bar;\n}',
+			parserOptions: { ecmaVersion: 2018 },
+			errors: [{
+				message: 'A blank line is needed before a return statement',
+				type: 'ReturnStatement'
+			}],
+			output: '() => {\n\tconst a = true;\n\n\t// comment\n\treturn bar;\n}',
 		}
 	]
 });
