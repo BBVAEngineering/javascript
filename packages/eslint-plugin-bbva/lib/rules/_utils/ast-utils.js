@@ -2,10 +2,7 @@
 
 module.exports = {
 	getImportNodes(scope) {
-		const body = scope ? scope.block.body : [];
-		const imports = body.filter((node) => node.type === 'ImportDeclaration');
-
-		return imports;
+		return scope.block.body.filter((node) => node.type === 'ImportDeclaration');
 	},
 
 	getImportSpecifiers(importNode) {

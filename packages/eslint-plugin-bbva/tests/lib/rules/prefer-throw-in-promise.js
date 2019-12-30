@@ -6,7 +6,7 @@ const RuleTester = require('eslint').RuleTester;
 const ruleTester = new RuleTester({
 	parserOptions: {
 		sourceType: 'module',
-		ecmaVersion: 2018
+		ecmaVersion: 2015
 	}
 });
 

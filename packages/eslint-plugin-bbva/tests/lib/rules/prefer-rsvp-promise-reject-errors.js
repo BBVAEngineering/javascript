@@ -3,48 +3,39 @@
 const rule = require('../../../lib/rules/prefer-rsvp-promise-reject-errors');
 const RuleTester = require('eslint').RuleTester;
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTester({
+	parserOptions: {
+		sourceType: 'module',
+		ecmaVersion: 2015
+	}
+});
 
 ruleTester.run('prefer-rsvp-promise-reject-errors', rule, {
 	valid: [
-		'reject(new Error())',
-		'RSVP.reject(new Error())',
-		'var err = new Error(); reject(err)',
-		'var err = new Error(); RSVP.reject(err)',
-		'function abc(err) { reject(err); }',
-		'function abc(err) { RSVP.reject(err) }',
-		'var err = someFn(); reject(err)',
-		'var err = someFn(); RSVP.reject(err)',
-		'var err = true || false; reject(err)',
-		'var err = true || false; RSVP.reject(err)',
-		'var err = 1 + 1; reject(err)',
-		'var err = 1 + 1; RSVP.reject(err)',
-		'var err = true ? 1 : 2; reject(err)',
-		'var err = true ? 1 : 2; RSVP.reject(err)',
-		'reject(err)',
-		{
-			code: 'import alias from \'rsvp\'; alias.reject(new Error())',
-			parserOptions: {
-				sourceType: 'module',
-				ecmaVersion: 2018
-			}
-		},
-		{
-			code: 'import { reject as alias } from \'rsvp\'; alias(new Error())',
-			parserOptions: {
-				sourceType: 'module',
-				ecmaVersion: 2018
-			}
-		}
+		'import { reject } from \'rsvp\'; reject(new Error())',
+		'import RSVP from \'rsvp\'; RSVP.reject(new Error())',
+		'import { reject } from \'rsvp\'; var err = new Error(); reject(err)',
+		'import RSVP from \'rsvp\'; var err = new Error(); RSVP.reject(err)',
+		'import { reject } from \'rsvp\'; function abc(err) { reject(err); }',
+		'import RSVP from \'rsvp\'; function abc(err) { RSVP.reject(err) }',
+		'import { reject } from \'rsvp\'; var err = someFn(); reject(err)',
+		'import RSVP from \'rsvp\'; var err = someFn(); RSVP.reject(err)',
+		'import { reject } from \'rsvp\'; var err = true || false; reject(err)',
+		'import RSVP from \'rsvp\'; var err = true || false; RSVP.reject(err)',
+		'import { reject } from \'rsvp\'; var err = 1 + 1; reject(err)',
+		'import RSVP from \'rsvp\'; var err = 1 + 1; RSVP.reject(err)',
+		'import { reject } from \'rsvp\'; var err = true ? 1 : 2; reject(err)',
+		'import RSVP from \'rsvp\'; var err = true ? 1 : 2; RSVP.reject(err)',
+		'import { reject } from \'rsvp\'; reject(err)',
+		'import alias from \'rsvp\'; alias.reject(new Error())',
+		'import { reject as alias } from \'rsvp\'; alias(new Error())',
+		'import { resolve } from \'rsvp\'; Promise.reject()',
+		'Promise.reject()'
 	],
 
 	invalid: [
 		{
 			code: 'import { reject } from \'rsvp\'; reject()',
-			parserOptions: {
-				sourceType: 'module',
-				ecmaVersion: 2018
-			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
@@ -52,10 +43,6 @@ ruleTester.run('prefer-rsvp-promise-reject-errors', rule, {
 		},
 		{
 			code: 'import RSVP from \'rsvp\'; RSVP.reject()',
-			parserOptions: {
-				sourceType: 'module',
-				ecmaVersion: 2018
-			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
@@ -63,10 +50,6 @@ ruleTester.run('prefer-rsvp-promise-reject-errors', rule, {
 		},
 		{
 			code: 'import { reject } from \'rsvp\'; reject(\'foo\')',
-			parserOptions: {
-				sourceType: 'module',
-				ecmaVersion: 2018
-			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
@@ -74,10 +57,6 @@ ruleTester.run('prefer-rsvp-promise-reject-errors', rule, {
 		},
 		{
 			code: 'import { reject } from \'rsvp\'; reject(42)',
-			parserOptions: {
-				sourceType: 'module',
-				ecmaVersion: 2018
-			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
@@ -85,10 +64,6 @@ ruleTester.run('prefer-rsvp-promise-reject-errors', rule, {
 		},
 		{
 			code: 'import { reject } from \'rsvp\'; reject(true)',
-			parserOptions: {
-				sourceType: 'module',
-				ecmaVersion: 2018
-			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
@@ -96,10 +71,6 @@ ruleTester.run('prefer-rsvp-promise-reject-errors', rule, {
 		},
 		{
 			code: 'import { reject } from \'rsvp\'; reject({ foo: \'bar\' })',
-			parserOptions: {
-				sourceType: 'module',
-				ecmaVersion: 2018
-			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
@@ -107,10 +78,6 @@ ruleTester.run('prefer-rsvp-promise-reject-errors', rule, {
 		},
 		{
 			code: 'import { reject } from \'rsvp\'; const foo = \'bar\'; reject(foo)',
-			parserOptions: {
-				sourceType: 'module',
-				ecmaVersion: 2018
-			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
@@ -118,10 +85,6 @@ ruleTester.run('prefer-rsvp-promise-reject-errors', rule, {
 		},
 		{
 			code: 'import alias from \'rsvp\'; alias.reject()',
-			parserOptions: {
-				sourceType: 'module',
-				ecmaVersion: 2018
-			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
@@ -129,10 +92,6 @@ ruleTester.run('prefer-rsvp-promise-reject-errors', rule, {
 		},
 		{
 			code: 'import { reject as alias } from \'rsvp\'; alias()',
-			parserOptions: {
-				sourceType: 'module',
-				ecmaVersion: 2018
-			},
 			errors: [{
 				message: 'Expected the RSVP Promise rejection reason to be an Error',
 				type: 'CallExpression'
