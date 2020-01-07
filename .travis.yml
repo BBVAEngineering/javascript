@@ -41,14 +41,13 @@ jobs:
         - npm run codecov
 
     - stage: "Release"
-      install:
-        - npx lerna bootstrap --ci
       script: skip
       deploy:
         provider: script
         skip_cleanup: true
         script:
-          - npm run release -- --yes --loglevel debug
+          - git checkout -qf $TRAVIS_BRANCH
+          - npm run release -- --yes
 
 stages:
   - "Tests"
