@@ -45,10 +45,9 @@ jobs:
       deploy:
         provider: script
         skip_cleanup: true
-        before_script:
-          - npx lerna bootstrap --ci
         script:
-          - npm run release -- --yes
+          - npx lerna bootstrap --ci
+          - npm run release -- --yes --loglevel debug
 
 stages:
   - "Tests"
