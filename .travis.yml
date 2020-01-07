@@ -45,7 +45,7 @@ jobs:
       deploy:
         provider: script
         skip_cleanup: true
-        install:
+        before_script:
           - npx lerna bootstrap --ci
         script:
           - npm run release -- --yes
