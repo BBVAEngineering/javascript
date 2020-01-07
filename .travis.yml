@@ -41,12 +41,13 @@ jobs:
         - npm run codecov
 
     - stage: "Release"
+      install:
+        - npx lerna bootstrap --ci
       script: skip
       deploy:
         provider: script
         skip_cleanup: true
         script:
-          - npx lerna bootstrap --ci
           - npm run release -- --yes --loglevel debug
 
 stages:
