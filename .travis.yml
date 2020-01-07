@@ -42,11 +42,12 @@ jobs:
 
     - stage: "Release"
       script: skip
+      before_install:
+        - git checkout -qf $TRAVIS_BRANCH
       deploy:
         provider: script
         skip_cleanup: true
         script:
-          - git checkout -qf $TRAVIS_BRANCH
           - npm run release -- --yes
 
 stages:
