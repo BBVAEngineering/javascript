@@ -14,6 +14,10 @@ function checkAbortTransition(context, transitionArgument) {
 	}
 }
 
+function mightBeEmberRouteFile(filename) {
+	return filename.endsWith('route.js') || filename.includes('routes') || filename.includes('mixins') || filename.includes('reopens');
+}
+
 module.exports = {
 	meta: {
 		type: 'suggestion',
@@ -26,17 +30,9 @@ module.exports = {
 	},
 
 	create(context) {
-		const filename = context.getFilename();
-
-		if (filename.endsWith('route.js') || filename.includes('routes') || filename.includes('mixins')) {
+		if (mightBeEmberRouteFile(context.getFilename())) {
 			return {
 				'Property[key.name=beforeModel] > FunctionExpression[params.length=1]'(node) {
-					checkAbortTransition(context, node.params[0]);
-				},
-				'Property[key.name=willTransition] > FunctionExpression[params.length=1]'(node) {
-					checkAbortTransition(context, node.params[0]);
-				},
-				'Property[key.name=loading] > FunctionExpression[params.length>=2]'(node) {
 					checkAbortTransition(context, node.params[0]);
 				},
 				'Property[key.name=model] > FunctionExpression[params.length=2]'(node) {
@@ -47,12 +43,6 @@ module.exports = {
 				},
 				'Property[key.name=redirect] > FunctionExpression[params.length=2]'(node) {
 					checkAbortTransition(context, node.params[1]);
-				},
-				'Property[key.name=error] > FunctionExpression[params.length=2]'(node) {
-					checkAbortTransition(context, node.params[1]);
-				},
-				'Property[key.name=resetController] > FunctionExpression[params.length=3]'(node) {
-					checkAbortTransition(context, node.params[2]);
 				}
 			};
 		}

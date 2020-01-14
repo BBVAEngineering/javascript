@@ -20,6 +20,10 @@ ruleTester.run('no-transition-abort-in-routes', rule, {
 			filename: 'foo/mixins/bar.js'
 		},
 		{
+			code: 'Route.extend({ model(params, transition) { abortIfNotFirst(transition); } })',
+			filename: 'foo/reopens/bar.js'
+		},
+		{
 			code: 'Route.extend({ model(params, transition) { transition.abort(); } })',
 			filename: 'foo/bar/baz.js'
 		},
@@ -28,27 +32,11 @@ ruleTester.run('no-transition-abort-in-routes', rule, {
 			filename: 'foo/bar/route.js'
 		},
 		{
-			code: 'Route.extend({ willTransition(transition) { abortIfNotFirst(transition); } })',
-			filename: 'foo/bar/route.js'
-		},
-		{
-			code: 'Route.extend({ loading(transition, route) { abortIfNotFirst(transition); } })',
-			filename: 'foo/bar/route.js'
-		},
-		{
 			code: 'Route.extend({ afterModel(resolvedModel, transition) { abortIfNotFirst(transition); } })',
 			filename: 'foo/bar/route.js'
 		},
 		{
 			code: 'Route.extend({ redirect(model, transition) { abortIfNotFirst(transition); } })',
-			filename: 'foo/bar/route.js'
-		},
-		{
-			code: 'Route.extend({ error(error, transition) { abortIfNotFirst(transition); } })',
-			filename: 'foo/bar/route.js'
-		},
-		{
-			code: 'Route.extend({ resetController(controller, isExiting, transition) { abortIfNotFirst(transition); } })',
 			filename: 'foo/bar/route.js'
 		}
 	],
@@ -87,23 +75,15 @@ ruleTester.run('no-transition-abort-in-routes', rule, {
 			}]
 		},
 		{
+			code: 'Route.extend({ model(params, transition) { transition.abort(); } })',
+			filename: 'foo/reopens/bar.js',
+			errors: [{
+				message: 'avoid aborting the transition on route hooks, use an abort with fallback method instead',
+				type: 'CallExpression'
+			}]
+		},
+		{
 			code: 'Route.extend({ beforeModel(transition) { transition.abort(); } })',
-			filename: 'foo/bar/route.js',
-			errors: [{
-				message: 'avoid aborting the transition on route hooks, use an abort with fallback method instead',
-				type: 'CallExpression'
-			}]
-		},
-		{
-			code: 'Route.extend({ willTransition(transition) { transition.abort(); } })',
-			filename: 'foo/bar/route.js',
-			errors: [{
-				message: 'avoid aborting the transition on route hooks, use an abort with fallback method instead',
-				type: 'CallExpression'
-			}]
-		},
-		{
-			code: 'Route.extend({ loading(transition, route) { transition.abort(); } })',
 			filename: 'foo/bar/route.js',
 			errors: [{
 				message: 'avoid aborting the transition on route hooks, use an abort with fallback method instead',
@@ -120,22 +100,6 @@ ruleTester.run('no-transition-abort-in-routes', rule, {
 		},
 		{
 			code: 'Route.extend({ redirect(model, transition) { transition.abort(); } })',
-			filename: 'foo/bar/route.js',
-			errors: [{
-				message: 'avoid aborting the transition on route hooks, use an abort with fallback method instead',
-				type: 'CallExpression'
-			}]
-		},
-		{
-			code: 'Route.extend({ error(error, transition) { transition.abort(); } })',
-			filename: 'foo/bar/route.js',
-			errors: [{
-				message: 'avoid aborting the transition on route hooks, use an abort with fallback method instead',
-				type: 'CallExpression'
-			}]
-		},
-		{
-			code: 'Route.extend({ resetController(controller, isExiting, transition) { transition.abort(); } })',
 			filename: 'foo/bar/route.js',
 			errors: [{
 				message: 'avoid aborting the transition on route hooks, use an abort with fallback method instead',

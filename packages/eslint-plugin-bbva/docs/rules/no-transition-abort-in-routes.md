@@ -32,4 +32,4 @@ export default Route.extend({
 
 ## Known limitations
 
-This rule only checks for certain hooks (`beforeModel`, `willTransition`, `loading`, `model`, `afterModel`, `redirect`, `error`, `resetController`) in files which might contain Ember route logic (files named `route.js` or whose path contains `routes` or `mixins`), but the active transition can always be accessed by retrieving the internal routing service state.
+This rule only checks for certain hooks (`beforeModel`, `model`, `afterModel`, `redirect`) in files which might contain Ember route logic (files named `route.js` or whose path contains `routes`, `mixins` or `reopens`), but the active transition can always be accessed by retrieving the internal routing service state and that cannot be easily detected.
