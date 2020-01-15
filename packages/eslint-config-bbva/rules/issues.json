@@ -46,7 +46,7 @@
     "operator-assignment": [1, "always"],
     "operator-linebreak": 0,
     "padded-blocks": [1, "never"],
-    "padding-line-between-statemens": [1,
+    "padding-line-between-statements": [1,
       { "blankLine": "always", "prev": "*", "next": "return" },
       { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
       { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] }
