@@ -6,20 +6,22 @@ const astUtils = require('./_utils/ast-utils');
 const PROMISE_REJECT = '[callee.object.name=Promise][callee.property.name=reject]';
 
 function getRejectTypesQuery(defaultImport, rejectImport) {
+	const RSVP_REJECT = `[callee.name=${rejectImport}]`;
+	const RSVP_DEFAULT = `[callee.object.name=${defaultImport}]`;
+
 	// Query for `reject`, `RSVP.reject`, `Promise.reject`
 	if (defaultImport && rejectImport) {
-		// eslint-disable-next-line max-len
-		return `:matches([callee.name=${rejectImport}], :matches([callee.object.name=${defaultImport}][callee.property.name=reject], ${PROMISE_REJECT}))`;
+		return `CallExpression:matches(${RSVP_REJECT}, :matches(${RSVP_DEFAULT}[callee.property.name=reject], ${PROMISE_REJECT}))`;
 	}
 
 	// Query for `RSVP.reject`, `Promise.reject`
 	if (defaultImport) {
-		return `:matches([callee.object.name=${defaultImport}][callee.property.name=reject], ${PROMISE_REJECT})`;
+		return `CallExpression:matches(${RSVP_DEFAULT}[callee.property.name=reject], ${PROMISE_REJECT})`;
 	}
 
 	// Query for `reject`, `Promise.reject`
 	if (rejectImport) {
-		return `:matches([callee.name=${rejectImport}], ${PROMISE_REJECT})`;
+		return `CallExpression:matches(${RSVP_REJECT}, ${PROMISE_REJECT})`;
 	}
 
 	return null;
@@ -54,16 +56,16 @@ module.exports = {
 		}
 
 		return {
-			// Matches any `reject` (either Promise or imported from RSVP library) inside a `then` / `catch`
-			[`CallExpression:matches([callee.property.name=then], [callee.property.name=catch]) CallExpression${rejectQuery}`](node) {
+			// Matches any `return reject()` (either Promise or imported from RSVP library) inside a `then` / `catch`
+			[`CallExpression:matches([callee.property.name=then], [callee.property.name=catch]) ReturnStatement > ${rejectQuery}`](node) {
 				context.report({
 					node,
 					messageId: 'throwInsteadOfReject'
 				});
 			},
 
-			// Matches any `reject` (either Promise or imported from RSVP library) inside a `try ... catch`
-			[`TryStatement CallExpression${rejectQuery}`](node) {
+			// Matches any `return reject()` (either Promise or imported from RSVP library) inside a `try ... catch` in an asynchronous function
+			[`:matches(FunctionDeclaration, FunctionExpression)[async=true] TryStatement ReturnStatement > ${rejectQuery}`](node) {
 				context.report({
 					node,
 					messageId: 'throwInsteadOfReject'

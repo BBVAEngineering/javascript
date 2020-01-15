@@ -19,16 +19,20 @@ foo().catch(() => {
   return reject();
 });
 
-try {
-  return reject();
-} catch (e) {
-  // ...
+async function foo() {
+  try {
+    return reject();
+  } catch (e) {
+    // ...
+  }
 }
 
-try {
-  // ...
-} catch (e) {
-  return reject();
+async function foo() {
+  try {
+    // ...
+  } catch (e) {
+    return reject();
+  }
 }
 ```
 
@@ -47,10 +51,20 @@ foo().catch(() => {
   throw new Error();
 });
 
-try {
-  // ...
-} catch (e) {
-  throw new Error();
+async function () {
+  try {
+    // ...
+  } catch (e) {
+    throw new Error();
+  }
+}
+
+function foo() {
+  try {
+    // ...
+  } catch (e) {
+    return reject();
+  }
 }
 ```
 
