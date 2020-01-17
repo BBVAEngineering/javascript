@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/BBVAEngineering/javascript/compare/eslint-config-bbva@3.1.0...eslint-config-bbva@3.2.0) (2020-01-17)
+
+
+### Features
+
+* **empty-line-before-return:** remove custom rule, update config ([5f806a3](https://github.com/BBVAEngineering/javascript/commit/5f806a3bfbfb7fa60c9e1466481d6ea3cb0fa469))
+* **eslint-config-bbva:** fix incorrectly named rule ([20ed015](https://github.com/BBVAEngineering/javascript/commit/20ed01573d1a22c589471a1b38fb784ab64e7bc7))
+
+
+
+
+
 # [3.1.0](https://github.com/BBVAEngineering/javascript/compare/eslint-config-bbva@3.0.0...eslint-config-bbva@3.1.0) (2019-12-24)
 
 
