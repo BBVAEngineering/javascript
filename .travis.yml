@@ -51,6 +51,7 @@ jobs:
         skip_cleanup: true
         script:
           - npm run release -- --yes --git-remote pub
+          - npx lerna publish from-package
 
 stages:
   - "Tests"
