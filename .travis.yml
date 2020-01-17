@@ -44,6 +44,7 @@ jobs:
       script: skip
       before_install:
         - git remote add pub https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
+        - git fetch pub master
         - git checkout -qf ${TRAVIS_BRANCH}
       deploy:
         provider: script
