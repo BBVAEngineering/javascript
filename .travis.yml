@@ -47,14 +47,14 @@ jobs:
         - git fetch pub master
         - git checkout -qf ${TRAVIS_BRANCH}
       deploy:
-        provider: script
-        skip_cleanup: true
-        script:
-          - npm run release -- --yes --git-remote pub
-          - npx lerna publish from-package
+        - provider: script
+          skip_cleanup: true
+          script: npm run release -- --yes --git-remote pub
+        - provider: script
+          skip_cleanup: true
+          script: npx lerna publish from-package
 
 stages:
   - "Tests"
   - name: "Release"
     if: branch = master
-
