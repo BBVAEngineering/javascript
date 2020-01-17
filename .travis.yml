@@ -52,7 +52,7 @@ jobs:
           script: npm run release -- --yes --git-remote pub
         - provider: script
           skip_cleanup: true
-          script: npx lerna publish from-package
+          script: npx lerna publish from-package --yes
 
 stages:
   - "Tests"
