@@ -1,9 +1,17 @@
 'use strict';
 
 function checkAbortTransition(context, transitionArgument) {
+	// This covers the destructuring case: `model(params, { queryParams })`
+	if (transitionArgument.type === 'ObjectPattern') {
+		return;
+	}
+
 	const transitionVariable = context.getScope().set.get(transitionArgument.name);
 	const transitionAbortCall = transitionVariable.references.find((ref) =>
-		ref.identifier.parent.parent.type === 'CallExpression' && ref.identifier.parent.parent.callee.property.name === 'abort'
+		ref.identifier.parent.type === 'MemberExpression' &&
+		ref.identifier.parent.parent.type === 'CallExpression' &&
+		ref.identifier.parent.parent.callee.property &&
+		ref.identifier.parent.parent.callee.property.name === 'abort'
 	);
 
 	if (transitionAbortCall) {
