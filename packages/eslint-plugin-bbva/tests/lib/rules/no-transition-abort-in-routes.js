@@ -38,6 +38,18 @@ ruleTester.run('no-transition-abort-in-routes', rule, {
 		{
 			code: 'Route.extend({ redirect(model, transition) { abortIfNotFirst(transition); } })',
 			filename: 'foo/bar/route.js'
+		},
+		{
+			code: 'Route.extend({ model(model, { queryParams }) { foo(); } })',
+			filename: 'foo/bar/route.js'
+		},
+		{
+			code: 'Route.extend({ model(model, transition) { foo(transition.queryParams); } })',
+			filename: 'foo/bar/route.js'
+		},
+		{
+			code: 'Route.extend({ model(model, transition) { foo(); } })',
+			filename: 'foo/bar/route.js'
 		}
 	],
 
