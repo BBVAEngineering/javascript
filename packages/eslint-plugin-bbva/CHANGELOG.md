@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/BBVAEngineering/javascript/compare/eslint-plugin-bbva@1.3.0...eslint-plugin-bbva@1.3.1) (2020-01-21)
+
+
+### Bug Fixes
+
+* **no-transition-abort-in-routes:** fix runtime error ([7e36449](https://github.com/BBVAEngineering/javascript/commit/7e3644992ee8c17ee04a0c55b228e56adeabd08f))
+
+
+
+
+
 # [1.3.0](https://github.com/BBVAEngineering/javascript/compare/eslint-plugin-bbva@1.2.0...eslint-plugin-bbva@1.3.0) (2020-01-17)
 
 
