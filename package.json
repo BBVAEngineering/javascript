@@ -1,9 +1,5 @@
 {
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
+  "name": "javascript",
   "scripts": {
     "codecov": "lerna run codecov",
     "commit": "git-cz",
@@ -11,13 +7,20 @@
     "test": "lerna run test",
     "release": "lerna version --conventional-commits"
   },
+  "engines": {
+    "node": "8.* || >= 10.*"
+  },
+  "dependencies": {
+    "eslint-config-bbva": "file:packages/eslint-config-bbva",
+    "eslint-plugin-bbva": "file:packages/eslint-plugin-bbva"
+  },
   "devDependencies": {
     "@commitlint/cli": "^8.3.4",
     "@commitlint/config-conventional": "^8.3.4",
     "codecov": "^3.2.0",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
-    "eslint": "^6.8.0",
+    "eslint": "^6.6.0",
     "eslint-plugin-node": "^11.0.0",
     "husky": "^4.0.0",
     "istanbul": "^0.4.5",
@@ -26,9 +29,9 @@
     "nyc": "^15.0.0",
     "remark-cli": "^7.0.1"
   },
-  "name": "javascript",
-  "dependencies": {
-    "eslint-config-bbva": "file:packages/eslint-config-bbva",
-    "eslint-plugin-bbva": "file:packages/eslint-plugin-bbva"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

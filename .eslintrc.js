@@ -3,18 +3,13 @@
 module.exports = {
 	root: true,
 	parserOptions: {
-		ecmaVersion: 2017,
-		sourceType: 'module'
+		sourceType: 'script'
 	},
 	extends: [
+		'plugin:node/recommended',
 		'eslint-config-bbva'
 	],
 	plugins: [
-		'node',
-		'optimize-regex',
-		'no-unsanitized'
-	],
-	env: {
-		node: true
-	}
+		'node'
+	]
 };
