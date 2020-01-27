@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.1](https://github.com/BBVAEngineering/javascript/compare/eslint-config-bbva@3.2.0...eslint-config-bbva@3.2.1) (2020-01-27)
+
+
+### Bug Fixes
+
+* **package:** add external dependencies ([99f49da](https://github.com/BBVAEngineering/javascript/commit/99f49da02b91bf4b2a76e498ff5d9f27ca0792d5))
+
+
+
+
+
 # [3.2.0](https://github.com/BBVAEngineering/javascript/compare/eslint-config-bbva@3.1.0...eslint-config-bbva@3.2.0) (2020-01-17)
 
 
