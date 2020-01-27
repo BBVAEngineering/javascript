@@ -1,4 +1,8 @@
 {
+	"plugins": [
+		"optimize-regex",
+		"no-unsanitized"
+	],
   "rules": {
     "optimize-regex/optimize-regex": 1,
     "no-unsanitized/method": 2,
