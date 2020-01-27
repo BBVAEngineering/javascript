@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "codecov": "echo 'No coverage found'",
-    "lint": "eslint --max-warnings 0 ./*.js",
+    "lint": "eslint --max-warnings 0 --config ./index.js ./*.js",
     "test": "echo 'Passed :)'"
   },
   "repository": {
