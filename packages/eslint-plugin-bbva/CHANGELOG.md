@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.3](https://github.com/BBVAEngineering/javascript/compare/eslint-plugin-bbva@1.3.2...eslint-plugin-bbva@1.3.3) (2020-02-03)
+
+
+### Bug Fixes
+
+* **no-throw-in-unchained-promise:** fix false positives ([bf45bbc](https://github.com/BBVAEngineering/javascript/commit/bf45bbcb56e245389a1c0fb4cd8b43d85dfc41c7))
+
+
+
+
+
 ## [1.3.2](https://github.com/BBVAEngineering/javascript/compare/eslint-plugin-bbva@1.3.1...eslint-plugin-bbva@1.3.2) (2020-01-27)
 
 
