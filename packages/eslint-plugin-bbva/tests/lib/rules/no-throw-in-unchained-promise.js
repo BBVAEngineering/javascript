@@ -19,7 +19,8 @@ ruleTester.run('no-throw-in-unchained-promise', rule, {
 		'function foo() { bar().then(() => { baz() }); }',
 		'function foo() { bar().then(() => {}, () => { baz(); }); }',
 		'function foo() { bar().catch(() => { baz(); }); }',
-		'function foo() { return bar().then(() => { throw new Error(); }).then(() => {}) }'
+		'function foo() { return bar().then(() => { throw new Error(); }).then(() => {}) }',
+		'var foo = () => bar().then(() => { throw new Error() });'
 	],
 
 	invalid: [
