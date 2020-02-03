@@ -7,42 +7,19 @@ const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 2015 } });
 
 ruleTester.run('no-throw-in-unchained-promise', rule, {
 	valid: [
-		{
-			code: 'function foo() { return bar().then(() => { throw new Error(); }); }'
-		},
-		{
-			code: 'function foo() { return bar().then(() => {}, () => { throw new Error(); }); }'
-		},
-		{
-			code: 'function foo() { return bar().catch(() => { throw new Error(); }); }'
-		},
-		{
-			code: 'function foo() { const a = bar().then(() => { throw new Error(); }); }'
-		},
-		{
-			code: 'function foo() { const a = bar().then(() => {}, () => { throw new Error(); }); }'
-		},
-		{
-			code: 'function foo() { const a = bar().catch(() => { throw new Error(); }); }'
-		},
-		{
-			code: 'function foo() { let a; a = bar().then(() => { throw new Error(); }); }'
-		},
-		{
-			code: 'function foo() { let a; a = bar().then(() => {}, () => { throw new Error(); }); }'
-		},
-		{
-			code: 'function foo() { let a; a = bar().catch(() => { throw new Error(); }); }'
-		},
-		{
-			code: 'function foo() { bar().then(() => { baz() }); }'
-		},
-		{
-			code: 'function foo() { bar().then(() => {}, () => { baz(); }); }'
-		},
-		{
-			code: 'function foo() { bar().catch(() => { baz(); }); }'
-		},
+		'function foo() { return bar().then(() => { throw new Error(); }); }',
+		'function foo() { return bar().then(() => {}, () => { throw new Error(); }); }',
+		'function foo() { return bar().catch(() => { throw new Error(); }); }',
+		'function foo() { const a = bar().then(() => { throw new Error(); }); }',
+		'function foo() { const a = bar().then(() => {}, () => { throw new Error(); }); }',
+		'function foo() { const a = bar().catch(() => { throw new Error(); }); }',
+		'function foo() { let a; a = bar().then(() => { throw new Error(); }); }',
+		'function foo() { let a; a = bar().then(() => {}, () => { throw new Error(); }); }',
+		'function foo() { let a; a = bar().catch(() => { throw new Error(); }); }',
+		'function foo() { bar().then(() => { baz() }); }',
+		'function foo() { bar().then(() => {}, () => { baz(); }); }',
+		'function foo() { bar().catch(() => { baz(); }); }',
+		'function foo() { return bar().then(() => { throw new Error(); }).then(() => {}) }'
 	],
 
 	invalid: [
@@ -62,6 +39,34 @@ ruleTester.run('no-throw-in-unchained-promise', rule, {
 		},
 		{
 			code: 'function foo() { bar().catch(() => { throw new Error(); }); }',
+			errors: [{
+				message: 'unchained promise handlers should not throw errors',
+				type: 'ThrowStatement'
+			}]
+		},
+		{
+			code: 'function foo() { bar().then(() => {}).then(() => { throw new Error(); }); }',
+			errors: [{
+				message: 'unchained promise handlers should not throw errors',
+				type: 'ThrowStatement'
+			}]
+		},
+		{
+			code: 'function foo() { bar().then(() => {}).catch(() => { throw new Error(); }); }',
+			errors: [{
+				message: 'unchained promise handlers should not throw errors',
+				type: 'ThrowStatement'
+			}]
+		},
+		{
+			code: 'function foo() { bar().catch(() => {}).then(() => { throw new Error(); }); }',
+			errors: [{
+				message: 'unchained promise handlers should not throw errors',
+				type: 'ThrowStatement'
+			}]
+		},
+		{
+			code: 'function foo() { bar().catch(() => {}).catch(() => { throw new Error(); }); }',
 			errors: [{
 				message: 'unchained promise handlers should not throw errors',
 				type: 'ThrowStatement'

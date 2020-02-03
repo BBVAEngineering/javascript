@@ -14,7 +14,8 @@ module.exports = {
 	create(context) {
 		return {
 			// Matches any `throw` inside a `then` / `catch` that is not assigned to a variable or returned
-			[':not(:matches(ReturnStatement, VariableDeclarator, AssignmentExpression)) >' +
+			[':matches(FunctionDeclaration, ArrowFunctionExpression) > BlockStatement > ' +
+			':not(:matches(ReturnStatement, VariableDeclaration, ExpressionStatement[expression.type=AssignmentExpression])) ' +
 			'CallExpression:matches([callee.property.name=then], [callee.property.name=catch]) ThrowStatement'](node) {
 				context.report({
 					node,
