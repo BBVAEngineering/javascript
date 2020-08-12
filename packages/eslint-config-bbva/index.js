@@ -1,5 +1,6 @@
 module.exports = {
 	extends: [
+		'./rules/babel.json',
 		'./rules/basic.json',
 		'./rules/best-practices.json',
 		'./rules/error.json',
