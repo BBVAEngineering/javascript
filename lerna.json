@@ -1,12 +1,14 @@
 {
-  "packages": [
-    "packages/*"
-  ],
-  "version": "independent",
-  "command": {
-    "version": {
-      "allowBranch": "master",
-      "message": "chore(release): publish [skip ci]"
-    }
-  }
+    "command": {
+        "version": {
+            "allowBranch": "master",
+            "message": "chore(release): publish [skip ci]"
+        }
+    },
+    "npmClient": "yarn",
+    "packages": [
+        "packages/*"
+    ],
+    "useWorkspaces": true,
+    "version": "independent"
 }
