@@ -1,11 +1,20 @@
 {
-	"plugins": [
-		"optimize-regex",
-		"no-unsanitized"
-	],
-  "rules": {
-    "optimize-regex/optimize-regex": 1,
-    "no-unsanitized/method": 2,
-    "no-unsanitized/property": 2
-  }
+    "plugins": [
+        "decorator-position",
+        "no-unsanitized",
+        "optimize-regex"
+    ],
+    "rules": {
+        "decorator-position/decorator-position": [
+            "error",
+            {
+                "methods": "above",
+                "printWidth": 150,
+                "properties": "prefer-inline"
+            }
+        ],
+        "no-unsanitized/method": 2,
+        "no-unsanitized/property": 2,
+        "optimize-regex/optimize-regex": 1
+    }
 }
