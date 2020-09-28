@@ -44,6 +44,6 @@
     "eslint-plugin-optimize-regex": "^1.1.7"
   },
   "peerDependencies": {
-    "eslint": "^6.6.0"
+    "eslint": ">=6.6.0"
   }
 }
