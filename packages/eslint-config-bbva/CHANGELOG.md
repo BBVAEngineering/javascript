@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/BBVAEngineering/javascript/compare/eslint-config-bbva@3.2.2...eslint-config-bbva@3.3.0) (2020-09-29)
+
+
+### Bug Fixes
+
+* change eslint peer range ([0272e6b](https://github.com/BBVAEngineering/javascript/commit/0272e6b56280a1e66e233ac59084e9a9ae7fb815))
+
+
+### Features
+
+* add eslint-plugin-decorator-position to config ([440fef1](https://github.com/BBVAEngineering/javascript/commit/440fef1e770a41921df827d57a0e2df707e14894))
+
+
+
+
+
 ## [3.2.2](https://github.com/BBVAEngineering/javascript/compare/eslint-config-bbva@3.2.1...eslint-config-bbva@3.2.2) (2020-01-27)
 
 
