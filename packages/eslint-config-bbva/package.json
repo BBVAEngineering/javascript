@@ -40,10 +40,11 @@
   },
   "homepage": "https://github.com/BBVAEngineering/javascript",
   "dependencies": {
+    "eslint-plugin-decorator-position": "^2.2.1",
     "eslint-plugin-no-unsanitized": "^3.0.2",
     "eslint-plugin-optimize-regex": "^1.1.7"
   },
   "peerDependencies": {
-    "eslint": "^6.6.0"
+    "eslint": ">=6.6.0"
   }
 }

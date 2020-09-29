@@ -1,5 +1,6 @@
 {
   "name": "javascript",
+  "private": true,
   "scripts": {
     "codecov": "lerna run codecov",
     "commit": "git-cz",
@@ -33,5 +34,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

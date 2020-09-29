@@ -1,42 +1,33 @@
 ---
 language: node_js
-node_js: stable
-sudo: false
-dist: trusty
+node_js: "10"
+dist: xenial
 
 addons:
   chrome: stable
 
-cache:
-  directories:
-    - $HOME/.npm
+cache: yarn
 
 env:
   global:
     - JOBS=1
 
-jobs:
-  fail_fast: true
+branches:
+  only:
+    - master
+    - /^release/\d+\.\d+/
 
+jobs:
   include:
     - stage: "Tests"
       before_install:
-        - npm config set spin false
-        - npm install -g npm@6
         - npm install -g codecov
-        - npm install -g greenkeeper-lockfile@1
         - npm install -g @commitlint/travis-cli
-        - npm --version
-      install:
-        - if [[ $TRAVIS_BRANCH =~ greenkeeper || $TRAVIS_PULL_REQUEST_BRANCH =~ greenkeeper ]]; then npx lerna bootstrap --no-ci; else npx lerna bootstrap --ci; fi
-      before_script:
-        - greenkeeper-lockfile-update
+        - yarn --version
       script:
         - commitlint-travis
-        - npm run lint
-        - npm test
-      after_script:
-        - greenkeeper-lockfile-upload
+        - yarn lint
+        - yarn test
       after_success:
         - npm run codecov
 
