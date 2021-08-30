@@ -6,7 +6,6 @@
     "consistent-return": 1,
     "curly": 2,
     "default-case": 2,
-    "dot-location": [1, "property"],
     "dot-notation": 1,
     "eqeqeq": 2,
     "guard-for-in": 2,
@@ -21,7 +20,6 @@
     "no-extend-native": 2,
     "no-extra-bind": 2,
     "no-fallthrough": 2,
-    "no-floating-decimal": 1,
     "no-implicit-coercion": 1,
     "no-implied-eval": 2,
     "no-invalid-this": 0,
@@ -29,8 +27,10 @@
     "no-labels": 2,
     "no-lone-blocks": 2,
     "no-loop-func": 2,
-    "no-magic-numbers": [1, { "ignore": [-1, 0, 1, 2, 10, 100, 1000, 7, 24, 60, 3600, 365, 30] }],
-    "no-multi-spaces": 1,
+    "no-magic-numbers": [
+      1,
+      { "ignore": [-1, 0, 1, 2, 10, 100, 1000, 7, 24, 60, 3600, 365, 30] }
+    ],
     "no-multi-str": 2,
     "no-native-reassign": 2,
     "no-new-func": 1,
@@ -46,23 +46,28 @@
     "no-script-url": 2,
     "no-self-assign": 2,
     "no-self-compare": 2,
-    "no-sequences": 2,
+    "no-restricted-syntax": ["error", "SequenceExpression"],
     "prefer-promise-reject-errors": 2,
     "no-throw-literal": 2,
-    "no-unused-expressions": [1, {
-      "allowShortCircuit": true,
-      "allowTernary": true }
+    "no-unused-expressions": [
+      1,
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
     ],
     "no-useless-escape": 2,
     "no-useless-call": 1,
     "no-useless-concat": 1,
     "no-useless-catch": 2,
     "no-void": 2,
-    "no-warning-comments": [1, { "terms": ["fixme", "xxx"], "location": "anywhere" }],
+    "no-warning-comments": [
+      1,
+      { "terms": ["fixme", "xxx"], "location": "anywhere" }
+    ],
     "no-with": 2,
     "radix": 2,
     "vars-on-top": 1,
-    "wrap-iife": [1, "outside"],
     "yoda": 1
   }
 }

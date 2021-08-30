@@ -6,19 +6,19 @@ Javascript style guide inspired in [Airbnb](https://github.com/airbnb/javascript
 
 ## Table of Contents
 
-  1. [Editorconfig](#editorconfig)
-  1. [Babel](#babel)
-  1. [ESlint](#eslint)
-  1. [JSBeautify](#jsbeautify)
-  1. [Possible errors](#possible-errors)
+1. [Editorconfig](#editorconfig)
+1. [Babel](#babel)
+1. [ESlint](#eslint)
+1. [JSBeautify](#jsbeautify)
+1. [Possible errors](#possible-errors)
 
 ## Editorconfig
 
 EditorConfig helps developers define and maintain consistent coding styles between different editors and IDEs.
 
-- Tabs must be used to indent instead of spaces.
+- Spaces must be used to indent instead of tabs.
 
-- Use 1 tab to indent the code.
+- Use 2 spaces to indent the code.
 
 - Use "lf" char at end of line.
 
@@ -79,31 +79,31 @@ This little [beautifier](https://github.com/beautify-web/js-beautify) will refor
 
 ## Possible errors
 
-  1. Do not use console statements. When using Ember it's recommended to log with the Object [Ember.Logger](http://emberjs.com/api/classes/Ember.Logger.html)
+1. Do not use console statements. When using Ember it's recommended to log with the Object [Ember.Logger](http://emberjs.com/api/classes/Ember.Logger.html)
 
-  > Why? messages are considered to be for debugging purposes and therefore not suitable to ship to the client.
+> Why? messages are considered to be for debugging purposes and therefore not suitable to ship to the client.
 
-  ```javascript
-  Ember.Logger.log('Hey!');
-  ```
+```javascript
+Ember.Logger.log("Hey!");
+```
 
-  1. Trailing commas are not valid. eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle)
+1. Trailing commas are not valid. eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle)
 
-    > Why? In some browsers trailing commas can throw an error.
+   > Why? In some browsers trailing commas can throw an error.
 
-    ```javascript
-    // bad
-    var foo = {
-        bar: ":)",
-    };
-    var wow = [1,2,];
+   ```javascript
+   // bad
+   var foo = {
+     bar: ":)",
+   };
+   var wow = [1, 2];
 
-    // good
-    var foo = {
-        bar: ":)"
-    };
-    var wow = [1,2];
-    ```
+   // good
+   var foo = {
+     bar: ":)",
+   };
+   var wow = [1, 2];
+   ```
 
 **[⬆ back to top](#table-of-contents)**
 

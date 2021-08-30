@@ -1,6 +1,5 @@
 {
   "rules": {
-    "comma-dangle": [1, "only-multiline"],
     "for-direction": 0,
     "getter-return": 2,
     "no-cond-assign": [2, "except-parens"],
@@ -17,8 +16,6 @@
     "no-empty": 1,
     "no-ex-assign": 2,
     "no-extra-boolean-cast": 2,
-    "no-extra-parens": 0,
-    "no-extra-semi": 2,
     "no-func-assign": 2,
     "no-global-assign": 2,
     "no-inner-declarations": 1,
@@ -30,7 +27,6 @@
     "no-prototype-builtins": 1,
     "no-regex-spaces": 2,
     "no-sparse-arrays": 2,
-    "no-unexpected-multiline": 1,
     "no-unreachable": 2,
     "no-unsafe-finally": 2,
     "require-atomic-updates": 1,

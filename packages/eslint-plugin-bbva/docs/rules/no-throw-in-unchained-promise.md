@@ -47,4 +47,3 @@ function foo() {
 ## Known limitations
 
 This rule can only check that you are returning or storing the resulting promise in a variable, but cannot guarantee that it is correctly chained.
-

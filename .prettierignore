@@ -11,10 +11,12 @@
 /node_modules/
 
 # misc
-/coverage/
+coverage
+.nyc_output
 !.*
-.*/
 .eslintcache
+*.html
+*.hbs
 
 # ember-try
 /.node_modules.ember-try/
