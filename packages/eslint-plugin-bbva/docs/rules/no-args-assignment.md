@@ -11,7 +11,7 @@ Examples of **incorrect** code for this rule:
 
 ```js
 function foo() {
-	arguments[0] = 1;
+  arguments[0] = 1;
 }
 ```
 

@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "codecov": "echo 'No coverage found'",
-    "lint": "eslint --max-warnings 0 --config ./index.js ./*.js",
-    "test": "echo 'Passed :)'"
+    "test": "eslint --max-warnings 0 --config ./index.js ./*.js"
   },
   "repository": {
     "type": "git",
@@ -40,9 +39,9 @@
   },
   "homepage": "https://github.com/BBVAEngineering/javascript",
   "dependencies": {
-    "eslint-plugin-decorator-position": "^2.2.1",
-    "eslint-plugin-no-unsanitized": "^3.0.2",
-    "eslint-plugin-optimize-regex": "^1.1.7"
+    "eslint-plugin-decorator-position": "^2.2.29",
+    "eslint-plugin-no-unsanitized": "^3.1.5",
+    "eslint-plugin-optimize-regex": "^1.2.1"
   },
   "peerDependencies": {
     "eslint": ">=6.6.0"

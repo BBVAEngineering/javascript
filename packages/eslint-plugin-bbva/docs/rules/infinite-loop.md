@@ -9,7 +9,7 @@ Examples of **incorrect** code for this rule:
 
 ```js
 for (let i = 0; i < 10; j++) {
-	// ...
+  // ...
 }
 ```
 
@@ -17,6 +17,6 @@ Examples of **correct** code for this rule:
 
 ```js
 for (let i = 0; i < 10; i++) {
-	// ...
+  // ...
 }
 ```

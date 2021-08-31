@@ -7,26 +7,24 @@ Aborting the first transition of an Ember application can make the page unrespon
 Examples of **incorrect** code for this rule:
 
 ```js
-import Route from '@ember/routing/route';
+import Route from "@ember/routing/route";
 
 export default Route.extend({
-
   model(params, transition) {
     transition.abort();
-  }
+  },
 });
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
-import Route from '@ember/routing/route';
+import Route from "@ember/routing/route";
 
 export default Route.extend({
-
   model(params, transition) {
     abortIfNotFirst(transition);
-  }
+  },
 });
 ```
 
