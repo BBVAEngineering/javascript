@@ -46,7 +46,6 @@ jobs:
         run: yarn install
       - name: Release
         run: |
-          yarn build
           lerna version --yes
           lerna publish from-package --yes
         env:
