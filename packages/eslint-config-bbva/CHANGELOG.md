@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1](https://github.com/BBVAEngineering/javascript/compare/v4.0.0...v4.0.1) (2021-09-06)
+
+### Bug Fixes
+
+- turn off `callback-return` rule to avoid ember collision ([c6e8567](https://github.com/BBVAEngineering/javascript/commit/c6e85676faff9be59bb1e8d210a73b4bca9bc688))
+
 # 4.0.0 (2021-08-31)
 
 ### Bug Fixes
